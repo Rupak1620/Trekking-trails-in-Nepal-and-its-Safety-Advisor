@@ -38,4 +38,5 @@ ENV/
 .env.local
 
 # Logs
-*.log 
+*.log
+api.env
