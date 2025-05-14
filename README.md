@@ -8,9 +8,6 @@ A Streamlit web application that provides real-time weather information and safe
 - Safety assessments based on current weather conditions
 - Altitude-specific weather simulations
 - Customized recommendations for trekking safety
-- User-friendly interface with interactive location selection
-- Historical weather data analysis
-- Emergency contact information for each region
 - Packing list recommendations based on weather conditions
 
 ## Development Timeline
@@ -28,16 +25,8 @@ A Streamlit web application that provides real-time weather information and safe
 - User interface improvements
 
 ### Phase 3: Enhanced Features (March 2024)
-- Historical weather data integration
-- Emergency contact information database
 - Packing list recommendations
 - Performance optimizations
-
-### Phase 4: Testing and Refinement (April 2024)
-- User testing and feedback collection
-- Bug fixes and performance improvements
-- Documentation updates
-- Final UI/UX refinements
 
 ## Installation
 
@@ -77,30 +66,7 @@ streamlit run app.py
    - Current weather conditions
    - Safety assessment
    - Trekking recommendations
-   - Altitude-specific weather simulation
-   - Historical weather patterns
-   - Emergency contacts
-   - Packing recommendations
-
-## Project Structure
-
-```
-trekking-weather-advisor/
-├── app.py                 # Main Streamlit application
-├── weather_service.py     # Weather data service and safety assessment logic
-├── utils/
-│   ├── safety.py         # Safety assessment algorithms
-│   ├── recommendations.py # Trekking recommendations
-│   └── data_processing.py # Data processing utilities
-├── data/
-│   ├── locations.json    # Trekking locations data
-│   └── emergency.json    # Emergency contact information
-├── requirements.txt       # Project dependencies
-├── .env.example          # Example environment variables
-├── .gitignore            # Git ignore file
-└── README.md             # Project documentation
-```
-
+     
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. Before contributing, please:
