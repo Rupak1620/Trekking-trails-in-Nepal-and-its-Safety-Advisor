@@ -7,7 +7,7 @@ from datetime import datetime
 class WeatherService:
     def __init__(self):
         self.api_key = "fca52fda8bbd179494352b9405ea7370"
-        self.base_url = "https://api.openweathermap.org/data/2.5/weather"  # Changed to https
+        self.base_url = "https://api.openweathermap.org/data/2.5/weather"  
         self.base_conditions = {
             'spring': {'temp_range': (5, 15), 'wind_range': (5, 15), 'conditions': ['Clear', 'Clouds', 'Rain']},
             'summer': {'temp_range': (10, 20), 'wind_range': (3, 12), 'conditions': ['Clear', 'Clouds', 'Rain', 'Thunderstorm']},
@@ -32,12 +32,10 @@ class WeatherService:
         season = self._get_current_season()
         conditions = self.base_conditions[season]
         
-        # Adjust temperature based on altitude (roughly -6.5°C per 1000m)
         altitude_effect = (altitude - 1000) * -0.0065
         temp_min, temp_max = conditions['temp_range']
         temp = random.uniform(temp_min, temp_max) + altitude_effect
         
-        # Adjust wind based on altitude (increases with height)
         wind_min, wind_max = conditions['wind_range']
         wind_factor = 1 + (altitude / 5000)
         wind = random.uniform(wind_min, wind_max) * wind_factor
@@ -61,7 +59,7 @@ class WeatherService:
         
         try:
             response = requests.get(self.base_url, params=params)
-            response.raise_for_status()  # This will raise an exception for error status codes
+            response.raise_for_status()  
             return response.json()
         except requests.exceptions.RequestException as e:
             print(f"Error fetching weather data: {e}")
@@ -71,13 +69,11 @@ class WeatherService:
         """Analyze weather conditions and return safety impact level."""
         if not weather_data:
             return "Unknown"
-            
-        # Extract relevant weather parameters
+        
         temp = weather_data.get('main', {}).get('temp', 0)
         wind_speed = weather_data.get('wind', {}).get('speed', 0)
         weather_main = weather_data.get('weather', [{}])[0].get('main', '')
         
-        # Basic safety assessment
         if weather_main in ['Thunderstorm', 'Blizzard'] or temp < -20 or wind_speed > 25:
             return "High Risk"
         elif weather_main in ['Snow', 'Heavy Rain'] or temp < -10 or wind_speed > 20:
@@ -97,9 +93,7 @@ class WeatherService:
         return f"Current Conditions: {main}, Temperature: {temp}°C, Wind Speed: {wind} m/s"
 
 def main():
-    # Example usage
     service = WeatherService()
-    # Example coordinates for Everest Base Camp
     weather_data = service.get_weather_data(27.9881, 86.9250)
     print("\nWeather Data:")
     print(weather_data)
