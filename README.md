@@ -86,5 +86,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - OpenWeatherMap API for weather data
 - Streamlit for the web framework
-- Nepal Tourism Board for trekking route information
 - Local trekking guides for safety recommendations 
