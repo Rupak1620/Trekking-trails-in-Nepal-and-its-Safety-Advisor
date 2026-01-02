@@ -16,19 +16,19 @@ class TrekkingDataProcessor:
         if self.df is None:
             raise ValueError("Data not loaded. Call load_data() first.")
             
-        # Convert altitude to numeric, handling any non-numeric values
+        
         self.df['Average_Altitude_m'] = pd.to_numeric(self.df['Average_Altitude_m'], errors='coerce')
         
-        # Create binary features for known risks
+      
         risk_columns = ['Altitude_Sickness', 'Landslides', 'Cold_Weather', 'Remote_Access', 'High_Winds']
         for risk in risk_columns:
             self.df[risk] = self.df['Known_Risks'].str.contains(risk.replace('_', ' '), case=False).astype(int)
             
-        # Convert difficulty to ordinal values
+        
         difficulty_map = {'Easy': 1, 'Moderate': 2, 'Hard': 3}
         self.df['Difficulty_Score'] = self.df['Trail_Difficulty'].map(difficulty_map)
         
-        # Create season binary features
+       
         seasons = ['Pre-Monsoon', 'Post-Monsoon', 'Monsoon', 'Winter']
         for season in seasons:
             self.df[f'Season_{season}'] = self.df['Typical_Season'].str.contains(season, case=False).astype(int)
