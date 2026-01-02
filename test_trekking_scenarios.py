@@ -19,27 +19,21 @@ def test_trekking_scenarios():
         print(f"\nLocation: {location}")
         print(f"Altitude: {info['altitude']}m")
         
-        # Get real weather data
         weather_data = service.get_weather_data(info['lat'], info['lon'])
         
         if weather_data:
-            # Get safety assessment
             safety = service.get_safety_impact(weather_data)
             summary = service.get_weather_summary(weather_data)
             
             print("\nCurrent Weather Conditions:")
             print(summary)
             print(f"Safety Assessment: {safety}")
-            
-            # Generate simulated weather for the altitude
             simulated_data = service._generate_weather_data(info['altitude'])
             simulated_safety = service.get_safety_impact(simulated_data)
-            
             print("\nSimulated Weather for this Altitude:")
             print(service.get_weather_summary(simulated_data))
             print(f"Simulated Safety Assessment: {simulated_safety}")
             
-            # Provide trekking recommendations based on conditions
             if safety == "High Risk":
                 print("\n⚠️ WARNING: High risk conditions detected!")
                 print("Recommendation: Consider postponing trek or taking extra precautions")
@@ -51,8 +45,6 @@ def test_trekking_scenarios():
                 print("Recommendation: Standard precautions advised")
                 
             print("\n" + "="*50)
-            
-            # Add delay to avoid API rate limits
             time.sleep(2)
         else:
             print("Error: Could not fetch weather data for this location")
