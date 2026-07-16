@@ -1,89 +1,53 @@
-# Nepal Trekking Weather Advisor
+#  Nepal Trekking Weather Advisor (Archived)
 
-A Streamlit web application that provides real-time weather information and safety assessments for popular trekking routes in Nepal.
+> **This repository has been archived and is no longer under active development.**
 
-## Features
+Nepal Trekking Weather Advisor was my initial exploration into building AI-assisted tools for trekking safety in Nepal. The project focused on providing real-time weather information, safety assessments, and trekking recommendations through a Streamlit application.
 
-- Real-time weather data for popular trekking locations
-- Safety assessments based on current weather conditions
-- Altitude-specific weather simulations
-- Customized recommendations for trekking safety
-- Packing list recommendations based on weather conditions
+Although this project achieved its original goals, I later expanded the idea into a much larger vision.
 
-## Development Timeline
+---
 
-### Phase 1: Initial Development (January 2024)
-- Project setup and basic architecture
-- Integration with OpenWeatherMap API
-- Basic weather data display functionality
-- Initial UI design with Streamlit
+#  This Project Has Evolved into TrailSathi
 
-### Phase 2: Core Features (February 2024)
-- Implementation of safety assessment algorithms
-- Altitude-specific weather simulations
-- Basic trekking recommendations
-- User interface improvements
+The concepts developed in this repository is now live on **TrailSathi**, an AI-powered tourism and trekking platform for Nepal.
 
-### Phase 3: Enhanced Features (March 2024)
-- Packing list recommendations
-- Performance optimizations
+TrailSathi extends the original idea by offering:
 
-## Installation
+-  AI-powered trip planning and itinerary generation
+-  Trekking and tourism recommendations across Nepal
+-  Weather-aware safety advisories
+-  Intelligent travel assistant
+-  Community reviews and local guide information
+-  Destination discovery and travel planning
+-  Modern web application built with Next.js and TypeScript
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/trekking-weather-advisor.git
-cd trekking-weather-advisor
-```
+### 🌐 Live Demo
 
-2. Create a virtual environment and activate it:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+https://trailsathi.vercel.app/
 
-3. Install the required packages:
-```bash
-pip install -r requirements.txt
-```
+### 💻 Repository
 
-4. Set up your environment variables:
-```bash
-# Create a .env file in the root directory
-OPENWEATHERMAP_API_KEY=your_api_key_here
-```
+https://github.com/Rupak1620/trailsathi
 
-## Usage
+---
 
-1. Start the Streamlit app:
-```bash
-streamlit run app.py
-```
+# About This Repository
 
-2. Open your web browser and navigate to the URL shown in the terminal (usually http://localhost:8501)
+This repository is preserved as an archive to document the early development of the idea that eventually became TrailSathi.
 
-3. Select a trekking location from the dropdown menu to view:
-   - Current weather conditions
-   - Safety assessment
-   - Trekking recommendations
-     
-## Contributing
+It serves as an important milestone in my journey of building practical AI applications for real-world problems.
 
-Contributions are welcome! Please feel free to submit a Pull Request. Before contributing, please:
+---
 
-1. Fork the repository
-2. Create a new branch for your feature
-3. Make your changes
-4. Submit a pull request
+## Original Features
 
-Please ensure your code follows PEP 8 style guidelines and includes appropriate tests.
+- Real-time weather information for trekking routes
+- Weather-based safety assessment
+- Altitude-aware recommendations
+- Trekking guidance
+- Packing list suggestions
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- OpenWeatherMap API for weather data
-- Streamlit for the web framework
-- Local trekking guides for safety recommendations 
+Thank you for visiting this repository.
